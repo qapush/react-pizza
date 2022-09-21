@@ -16,10 +16,11 @@ export default function Home() {
         setItems(arr);
         setIsLoading(false);
       });
+    window.scrollTo(0, 0);
   }, []);
 
   return (
-    <>
+    <div className="container">
       <div className="content__top">
         <Categories />
         <Sort />
@@ -30,6 +31,6 @@ export default function Home() {
           ? [...new Array(12)].map((_, i) => <Skeleton key={i} />)
           : items.map((obj, i) => <PizzaBlock {...obj} key={i} />)}
       </div>
-    </>
+    </div>
   );
 }
